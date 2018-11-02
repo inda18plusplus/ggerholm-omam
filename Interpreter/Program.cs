@@ -86,7 +86,7 @@ namespace Interpreter
 
 		private static void Main()
 		{
-			var code = File.ReadAllText("HelloWorld.bf");
+			var code = File.ReadAllText("HelloWorld.omam");
 			Interpret(code);
 		}
 	}

@@ -84,10 +84,17 @@ namespace Interpreter
 			}
 		}
 
-		private static void Main()
+		private static void Main(string[] args)
 		{
-			var code = File.ReadAllText("HelloWorld.omam");
+			if (args.Length == 0)
+			{
+				return;
+			}
+
+			var code = args[0].EndsWith(".omam") ? File.ReadAllText(args[0]) : args[0];
+			var time = DateTime.Now;
 			Interpret(code);
+			Console.WriteLine($"\nTime taken: {DateTime.Now - time}");
 		}
 	}
 }
